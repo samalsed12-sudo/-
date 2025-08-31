@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شرح جميع قطع الكمبيوتر</title>
+<style>
+body {font-family:sans-serif; background:#f5f5f5; margin:0; padding:0; line-height:1.6;}
+header {background:#34495e; color:white; text-align:center; padding:20px; font-size:24px;}
+.container {max-width:1000px; margin:20px auto; padding:0 15px;}
+.card {background:white; border-radius:10px; padding:20px; margin:15px 0; box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+.card img {width:100%; max-height:200px; object-fit:cover; border-radius:8px; margin-bottom:10px;}
+.card h2 {margin-top:0; color:#2c3e50;}
+.card p {color:#555;}
+</style>
+</head>
+<body>
+
+<header>شرح جميع قطع الكمبيوتر</header>
+
+<div class="container" id="partsContainer">
+  <!-- القطع تظهر هنا -->
+</div>
+
+<script>
+const parts = [
+  {
+    name:"المعالج (CPU)",
+    img:"https://via.placeholder.com/800x200?text=CPU",
+    desc:"وحدة المعالجة المركزية هي عقل الكمبيوتر. تتحكم في جميع العمليات الحسابية والمنطقية وتؤثر بشكل كبير على أداء الجهاز."
+  },
+  {
+    name:"بطاقة الرسوميات (GPU)",
+    img:"https://via.placeholder.com/800x200?text=GPU",
+    desc:"بطاقة الرسوميات تتولى عرض الصور والفيديو والألعاب على الشاشة. كلما كانت قوية، كلما تحسنت تجربة الألعاب والتصميم."
+  },
+  {
+    name:"الرام (RAM)",
+    img:"https://via.placeholder.com/800x200?text=RAM",
+    desc:"ذاكرة الوصول العشوائي تعمل على تخزين البيانات المؤقتة للبرامج أثناء تشغيلها. حجمها وسرعتها يؤثر على سرعة الجهاز."
+  },
+  {
+    name:"التخزين (SSD/HDD)",
+    img:"https://via.placeholder.com/800x200?text=Storage",
+    desc:"القرص الصلب أو SSD يخزن جميع ملفاتك ونظام التشغيل. SSD أسرع بكثير من HDD."
+  },
+  {
+    name:"اللوحة الأم (Motherboard)",
+    img:"https://via.placeholder.com/800x200?text=Motherboard",
+    desc:"اللوحة الأم هي قاعدة الكمبيوتر، تربط كل القطع ببعضها وتسمح بالتواصل بينها."
+  },
+  {
+    name:"مزود الطاقة (PSU)",
+    img:"https://via.placeholder.com/800x200?text=PSU",
+    desc:"مزود الطاقة يمد الكمبيوتر بالكهرباء اللازمة لتشغيل جميع القطع."
+  },
+  {
+    name:"المبردات والمراوح (Coolers & Fans)",
+    img:"https://via.placeholder.com/800x200?text=Cooler",
+    desc:"تساعد المبردات والمراوح على تبريد المعالج والكرت وباقي القطع لمنع ارتفاع الحرارة."
+  },
+  {
+    name:"الكيس (Case)",
+    img:"https://via.placeholder.com/800x200?text=Case",
+    desc:"الكيس يحمي القطع من الغبار والصدمات ويساعد على توزيع الهواء بشكل صحيح."
+  }
+];
+
+function renderParts(){
+  const container = document.getElementById('partsContainer');
+  parts.forEach(p=>{
+    const card = document.createElement('div');
+    card.className="card";
+    card.innerHTML=`<img src="${p.img}" alt="${p.name}"/>
+    <h2>${p.name}</h2>
+    <p>${p.desc}</p>`;
+    container.appendChild(card);
+  });
+}
+
+// تحميل الموقع
+renderParts();
+</script>
+
+</body>
+</html>
